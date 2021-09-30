@@ -91,7 +91,7 @@ const EditEvent = () => {
         </Form.Group>
         <Row className="mb-5 mt-5">
           <Col className="text-center">
-            <Button className="btn-started" onClick={handleShare} type="submit">
+          <Button className="btn-started" onClick={handleShare} type="submit">
             Share
             </Button>
           </Col>
