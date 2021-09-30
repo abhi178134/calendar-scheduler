@@ -5,6 +5,7 @@ import { getAuth, onAuthStateChanged } from "firebase/auth";
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
 import DateObject from 'react-date-object';
+import Spinner from "./Spinner";
 
 
 const Home = () => {
@@ -23,16 +24,18 @@ const Home = () => {
     if (user) {
         const  mail = user.email;
         setEmail(mail);
+        navigate('/view');
     }
     else{
-        // setUid("NoUser");
-        // navigate('/login');
+        setEmail("");
+        navigate('/login');
     }
     });
     
     return(
         <>
-        <h1>Welcome To Calendar</h1>
+        <h1>Welcome To Calendar...</h1>
+        <Spinner/>
         </>
     );
 };

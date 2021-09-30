@@ -17,6 +17,9 @@ const Thumb = ({docID,data}) =>{
         navigate('/');
         console.log(id);
     }
+    const handleUpdate = (id) => {
+        console.log(id.target.id);
+    }
 
 return (
     <div>
@@ -24,17 +27,17 @@ return (
         <li>
             <h4>{details.title}</h4>
             <Content>
-            <Button id = {docID} className="btn-warning float-right" onClick={handleDelete} type="warning">
-            Update
-            </Button>
+                <Button id = {docID} className="btn-warning float-right" onClick={handleUpdate} type="warning">
+                Update
+                </Button>
                 {console.log(details)}
                 {details.desc}
                 <br/>
                 {details.duration}
                 <br/>
                 <Button id = {docID} className="btn-danger float-right" onClick={handleDelete} type="danger">
-            Delete
-            </Button>
+                Delete
+                </Button>
                 {new Date(details.date.seconds * 1000).toLocaleDateString("en-US")}
             </Content>
         </li>
